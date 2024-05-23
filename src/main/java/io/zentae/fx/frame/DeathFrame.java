@@ -1,18 +1,18 @@
 package io.zentae.fx.frame;
 
-import io.zentae.fx.panel.GamePanel;
+import io.zentae.fx.panel.DeathPanel;
 import io.zentae.snake.engine.controller.game.GameController;
 
 import javax.swing.*;
 
-public class GameFrame extends AbstractFrame {
+public class DeathFrame extends AbstractFrame {
 
-    public GameFrame(GameController controller) {
-        super(new GamePanel(controller));
+    public DeathFrame(GameController controller) {
+        super(new DeathPanel(controller));
         // create the game panel.
         add(super.getPanel());
         // set the title.
-        setTitle("Snake Blockade | Jeu");
+        setTitle("Snake Blockade | Mort !");
         // set the window size.
         setSize(480, 905);
         // state that if we hit the red button the program closes.

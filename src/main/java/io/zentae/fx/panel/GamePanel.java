@@ -11,7 +11,7 @@ import io.zentae.snake.engine.movement.Movement;
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends JPanel {
+public class GamePanel extends AbstractPanel {
 
     private static final Color BACKGROUND_COLOR = new Color(115, 162, 78);
     // the arena.
@@ -25,10 +25,10 @@ public class GamePanel extends JPanel {
         getInputMap().put(KeyStroke.getKeyStroke("LEFT"), "movement_left");
         getInputMap().put(KeyStroke.getKeyStroke("RIGHT"), "movement_right");
         // map the actions.
-        getActionMap().put("movement_up", new MovementAction(controller, Movement.UP));
-        getActionMap().put("movement_down", new MovementAction(controller, Movement.DOWN));
-        getActionMap().put("movement_left", new MovementAction(controller, Movement.LEFT));
-        getActionMap().put("movement_right", new MovementAction(controller, Movement.RIGHT));
+        getActionMap().put("movement_up", new MovementAction(Movement.UP));
+        getActionMap().put("movement_down", new MovementAction(Movement.DOWN));
+        getActionMap().put("movement_left", new MovementAction(Movement.LEFT));
+        getActionMap().put("movement_right", new MovementAction(Movement.RIGHT));
     }
 
     @Override

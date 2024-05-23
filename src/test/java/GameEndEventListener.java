@@ -1,5 +1,3 @@
-package io.zentae.fx;
-
 import io.zentae.snake.engine.event.GameEndEvent;
 import io.zentae.snake.engine.listener.Listener;
 

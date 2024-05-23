@@ -1,5 +1,3 @@
-package io.zentae.fx;
-
 import io.zentae.snake.engine.event.snake.SnakeMoveEvent;
 import io.zentae.snake.engine.listener.Listener;
 

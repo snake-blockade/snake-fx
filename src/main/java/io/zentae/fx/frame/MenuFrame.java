@@ -4,10 +4,12 @@ import io.zentae.fx.panel.MenuPanel;
 
 import javax.swing.*;
 
-public class MenuFrame extends JFrame {
+public class MenuFrame extends AbstractFrame {
 
     public MenuFrame() {
-        add(new MenuPanel());
+        super(new MenuPanel());
+        // add the panel.
+        add(super.getPanel());
         // set the title.
         setTitle("Snake Blockade | Menu");
         // set the size
@@ -18,7 +20,5 @@ public class MenuFrame extends JFrame {
         setLocationRelativeTo(null);
         // avoid problems lol.
         setResizable(false);
-        // show the frame.
-        setVisible(true);
     }
 }

@@ -1,6 +1,6 @@
 package io.zentae.fx.action;
 
-import io.zentae.snake.engine.controller.game.GameController;
+import io.zentae.snake.engine.GameEngine;
 import io.zentae.snake.engine.movement.Movement;
 
 import javax.swing.*;
@@ -8,18 +8,15 @@ import java.awt.event.ActionEvent;
 
 public class MovementAction extends AbstractAction {
 
-    // the game controller.
-    private final GameController controller;
     // the movement performed.
     private final Movement movement;
 
-    public MovementAction(GameController controller, Movement movement) {
-        this.controller = controller;
+    public MovementAction(Movement movement) {
         this.movement = movement;
     }
 
     @Override
     public void actionPerformed(ActionEvent event) {
-        controller.next(movement);
+        GameEngine.play(this.movement, true);
     }
 }
