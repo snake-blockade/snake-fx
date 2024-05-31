@@ -13,7 +13,8 @@ import java.awt.*;
 
 public class GamePanel extends AbstractPanel {
 
-    private static final Color BACKGROUND_COLOR = new Color(115, 162, 78);
+    private static final Color BACKGROUND_COLOR = new Color(162, 209, 72);
+    private static final Color BACKGROUND_COLOR_ALTERNATE = new Color(170, 215, 80);
     // the arena.
     private final Arena arena;
 
@@ -36,6 +37,25 @@ public class GamePanel extends AbstractPanel {
         super.paintComponent(g);
         // set background color.
         setBackground(BACKGROUND_COLOR);
+        // the alternator.
+        boolean alternate = true;
+        // the offset.
+        int offset = 0;
+        // set the graphics color.
+        g.setColor(BACKGROUND_COLOR_ALTERNATE);
+        // make squares.
+        for(int y = 0; y < getHeight(); y += 40) {
+            for(int x = 0; x < getWidth(); x += 40) {
+                // check if we should alternate.
+                if(alternate) {
+                    g.drawRect(x + offset, y, 40, 40);
+                    g.fillRect(x + offset, y, 40, 40);
+                }
+                // invert the value.
+                alternate = !alternate;
+            }
+            offset = offset == 40 ? 0 : 40;
+        }
         // translate.
         // render.
         Translator.getTranslationLayer(DefaultTranslationLayer.class)
